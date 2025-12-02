@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="logovector.jpg" type="image/svg+xml" />
+    <title>Vector University • Mock Tests</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      function submitQuiz(course) {
+        const form = document.getElementById(course + '-quiz');
+        const answers = form.querySelectorAll('input[type="radio"]:checked');
+        let score = 0;
+        const total = 10;
+        // Correct answers (indices 0-based)
+        const correct = {
+          'data-structures': [1, 2, 0, 1, 0, 1, 0, 1, 0, 1], // Example answers
+          'web-development': [0, 1, 2, 0, 1, 0, 1, 2, 0, 1],
+          'ai-fundamentals': [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+          'algorithms': [0, 1, 2, 0, 1, 0, 1, 2, 0, 1],
+          'database-management': [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+        };
+        answers.forEach((answer, index) => {
+          if (parseInt(answer.value) === correct[course][index]) score++;
+        });
+        alert(`Your score: ${score}/${total}. ${score >= 6 ? 'Passed!' : 'Try again.'}`);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="gradient-background">
+      <div class="sphere-1 gradient-sphere"></div>
+      <div class="sphere-2 gradient-sphere"></div>
+      <div class="sphere-3 gradient-sphere"></div>
+    </div>
+    <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+    <div class="glow"></div>
+    <div class="particles-container" id="particles-container"></div>
+    <script src="./particles.js"></script>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+           <img src="logovector.jpg" alt="Vector University logo" class="brand-logo" />
+          <span><b>Vector University</b></span>
+        </div>
+        <nav class="nav-links">
+          <a href="./index.html">Home</a>
+          <a href="./certificates.html">Certificates</a>
+          <a href="./about.html">About Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>Mock Tests</h1>
+          <p>Test your knowledge with our practice exams.</p>
+        </div>
+      </section>
+
+      <section id="data-structures">
+        <div class="container">
+          <h2 class="section-title">Data Structures Mock Test</h2>
+          <form id="data-structures-quiz">
+            <ol>
+              <li>What is the time complexity of accessing an element in an array?<br>
+                <input type="radio" name="q1" value="0"> O(1)<br>
+                <input type="radio" name="q1" value="1"> O(n)<br>
+                <input type="radio" name="q1" value="2"> O(log n)<br>
+                <input type="radio" name="q1" value="3"> O(n^2)</li>
+              <li>Which data structure follows LIFO?<br>
+                <input type="radio" name="q2" value="0"> Queue<br>
+                <input type="radio" name="q2" value="1"> Stack<br>
+                <input type="radio" name="q2" value="2"> Array<br>
+                <input type="radio" name="q2" value="3"> Linked List</li>
+              <li>What is the worst-case time for quicksort?<br>
+                <input type="radio" name="q3" value="0"> O(n log n)<br>
+                <input type="radio" name="q3" value="1"> O(n^2)<br>
+                <input type="radio" name="q3" value="2"> O(n)<br>
+                <input type="radio" name="q3" value="3"> O(log n)</li>
+              <li>In a binary search tree, where is the smallest element?<br>
+                <input type="radio" name="q4" value="0"> Root<br>
+                <input type="radio" name="q4" value="1"> Leftmost leaf<br>
+                <input type="radio" name="q4" value="2"> Rightmost leaf<br>
+                <input type="radio" name="q4" value="3"> Any leaf</li>
+              <li>What does FIFO stand for?<br>
+                <input type="radio" name="q5" value="0"> First In First Out<br>
+                <input type="radio" name="q5" value="1"> First In Last Out<br>
+                <input type="radio" name="q5" value="2"> Last In First Out<br>
+                <input type="radio" name="q5" value="3"> Last In Last Out</li>
+              <li>Which is not a linear data structure?<br>
+                <input type="radio" name="q6" value="0"> Array<br>
+                <input type="radio" name="q6" value="1"> Tree<br>
+                <input type="radio" name="q6" value="2"> Queue<br>
+                <input type="radio" name="q6" value="3"> Stack</li>
+              <li>What is the space complexity of a graph with V vertices and E edges?<br>
+                <input type="radio" name="q7" value="0"> O(V + E)<br>
+                <input type="radio" name="q7" value="1"> O(V)<br>
+                <input type="radio" name="q7" value="2"> O(E)<br>
+                <input type="radio" name="q7" value="3"> O(V * E)</li>
+              <li>Which sorting algorithm is stable?<br>
+                <input type="radio" name="q8" value="0"> Quick Sort<br>
+                <input type="radio" name="q8" value="1"> Merge Sort<br>
+                <input type="radio" name="q8" value="2"> Heap Sort<br>
+                <input type="radio" name="q8" value="3"> Selection Sort</li>
+              <li>What is the best case for bubble sort?<br>
+                <input type="radio" name="q9" value="0"> O(n)<br>
+                <input type="radio" name="q9" value="1"> O(n log n)<br>
+                <input type="radio" name="q9" value="2"> O(n^2)<br>
+                <input type="radio" name="q9" value="3"> O(1)</li>
+              <li>Which data structure uses hashing?<br>
+                <input type="radio" name="q10" value="0"> Array<br>
+                <input type="radio" name="q10" value="1"> Hash Table<br>
+                <input type="radio" name="q10" value="2"> Stack<br>
+                <input type="radio" name="q10" value="3"> Queue</li>
+            </ol>
+            <button type="button" class="btn btn-primary" onclick="submitQuiz('data-structures')">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="web-development">
+        <div class="container">
+          <h2 class="section-title">Web Development Mock Test</h2>
+          <form id="web-development-quiz">
+            <ol>
+              <li>What does HTML stand for?<br>
+                <input type="radio" name="q1" value="0"> HyperText Markup Language<br>
+                <input type="radio" name="q1" value="1"> HighText Machine Language<br>
+                <input type="radio" name="q1" value="2"> HyperText Machine Language<br>
+                <input type="radio" name="q1" value="3"> HyperText Markup Link</li>
+              <li>Which CSS property changes text color?<br>
+                <input type="radio" name="q2" value="0"> font-size<br>
+                <input type="radio" name="q2" value="1"> color<br>
+                <input type="radio" name="q2" value="2"> background<br>
+                <input type="radio" name="q2" value="3"> margin</li>
+              <li>What is JavaScript used for?<br>
+                <input type="radio" name="q3" value="0"> Styling<br>
+                <input type="radio" name="q3" value="1"> Structure<br>
+                <input type="radio" name="q3" value="2"> Interactivity<br>
+                <input type="radio" name="q3" value="3"> Layout</li>
+              <li>Which tag is for the largest heading?<br>
+                <input type="radio" name="q4" value="0"> h1<br>
+                <input type="radio" name="q4" value="1"> h2<br>
+                <input type="radio" name="q4" value="2"> h3<br>
+                <input type="radio" name="q4" value="3"> h4</li>
+              <li>What does CSS stand for?<br>
+                <input type="radio" name="q5" value="0"> Computer Style Sheets<br>
+                <input type="radio" name="q5" value="1"> Cascading Style Sheets<br>
+                <input type="radio" name="q5" value="2"> Creative Style Sheets<br>
+                <input type="radio" name="q5" value="3"> Colorful Style Sheets</li>
+              <li>Which is a JavaScript framework?<br>
+                <input type="radio" name="q6" value="0"> HTML<br>
+                <input type="radio" name="q6" value="1"> React<br>
+                <input type="radio" name="q6" value="2"> CSS<br>
+                <input type="radio" name="q6" value="3"> SQL</li>
+              <li>What is responsive design?<br>
+                <input type="radio" name="q7" value="0"> Fast loading<br>
+                <input type="radio" name="q7" value="1"> Adapts to screen size<br>
+                <input type="radio" name="q7" value="2"> Uses images<br>
+                <input type="radio" name="q7" value="3"> No CSS</li>
+              <li>Which HTTP method sends data?<br>
+                <input type="radio" name="q8" value="0"> GET<br>
+                <input type="radio" name="q8" value="1"> POST<br>
+                <input type="radio" name="q8" value="2"> PUT<br>
+                <input type="radio" name="q8" value="3"> DELETE</li>
+              <li>What is an API?<br>
+                <input type="radio" name="q9" value="0"> Application Programming Interface<br>
+                <input type="radio" name="q9" value="1"> Application Program Index<br>
+                <input type="radio" name="q9" value="2"> Application Protocol Interface<br>
+                <input type="radio" name="q9" value="3"> Application Programming Index</li>
+              <li>Which is a backend language?<br>
+                <input type="radio" name="q10" value="0"> HTML<br>
+                <input type="radio" name="q10" value="1"> Node.js<br>
+                <input type="radio" name="q10" value="2"> CSS<br>
+                <input type="radio" name="q10" value="3"> JavaScript (client-side)</li>
+            </ol>
+            <button type="button" class="btn btn-primary" onclick="submitQuiz('web-development')">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="ai-fundamentals">
+        <div class="container">
+          <h2 class="section-title">AI Fundamentals Mock Test</h2>
+          <form id="ai-fundamentals-quiz">
+            <ol>
+              <li>What is AI?<br>
+                <input type="radio" name="q1" value="0"> Artificial Intelligence<br>
+                <input type="radio" name="q1" value="1"> Automated Intelligence<br>
+                <input type="radio" name="q1" value="2"> Advanced Intelligence<br>
+                <input type="radio" name="q1" value="3"> Algorithmic Intelligence</li>
+              <li>Which is supervised learning?<br>
+                <input type="radio" name="q2" value="0"> Clustering<br>
+                <input type="radio" name="q2" value="1"> Classification with labels<br>
+                <input type="radio" name="q2" value="2"> Dimensionality reduction<br>
+                <input type="radio" name="q2" value="3"> Anomaly detection</li>
+              <li>What is overfitting?<br>
+                <input type="radio" name="q3" value="0"> Model too simple<br>
+                <input type="radio" name="q3" value="1"> Model too complex for data<br>
+                <input type="radio" name="q3" value="2"> No training data<br>
+                <input type="radio" name="q3" value="3"> Too much data</li>
+              <li>Which metric for classification?<br>
+                <input type="radio" name="q4" value="0"> Accuracy<br>
+                <input type="radio" name="q4" value="1"> Mean Squared Error<br>
+                <input type="radio" name="q4" value="2"> R-squared<br>
+                <input type="radio" name="q4" value="3"> Silhouette Score</li>
+              <li>What is a neural network?<br>
+                <input type="radio" name="q5" value="0"> Database<br>
+                <input type="radio" name="q5" value="1"> Inspired by brain<br>
+                <input type="radio" name="q5" value="2"> Sorting algorithm<br>
+                <input type="radio" name="q5" value="3"> Search tree</li>
+              <li>Which is unsupervised learning?<br>
+                <input type="radio" name="q6" value="0"> Regression<br>
+                <input type="radio" name="q6" value="1"> Clustering<br>
+                <input type="radio" name="q6" value="2"> Classification<br>
+                <input type="radio" name="q6" value="3"> Forecasting</li>
+              <li>What is bias in AI?<br>
+                <input type="radio" name="q7" value="0"> Model preference<br>
+                <input type="radio" name="q7" value="1"> Data imbalance<br>
+                <input type="radio" name="q7" value="2"> Overfitting<br>
+                <input type="radio" name="q7" value="3"> Underfitting</li>
+              <li>Which is a deep learning framework?<br>
+                <input type="radio" name="q8" value="0"> Pandas<br>
+                <input type="radio" name="q8" value="1"> TensorFlow<br>
+                <input type="radio" name="q8" value="2"> NumPy<br>
+                <input type="radio" name="q8" value="3"> Matplotlib</li>
+              <li>What is reinforcement learning?<br>
+                <input type="radio" name="q9" value="0"> Labeled data<br>
+                <input type="radio" name="q9" value="1"> Trial and error with rewards<br>
+                <input type="radio" name="q9" value="2"> Unlabeled data<br>
+                <input type="radio" name="q9" value="3"> Dimensionality reduction</li>
+              <li>Why is AI ethics important?<br>
+                <input type="radio" name="q10" value="0"> Faster processing<br>
+                <input type="radio" name="q10" value="1"> Fairness and safety<br>
+                <input type="radio" name="q10" value="2"> Cheaper costs<br>
+                <input type="radio" name="q10" value="3"> More accurate</li>
+            </ol>
+            <button type="button" class="btn btn-primary" onclick="submitQuiz('ai-fundamentals')">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="algorithms">
+        <div class="container">
+          <h2 class="section-title">Algorithms Mock Test</h2>
+          <form id="algorithms-quiz">
+            <ol>
+              <li>What is the time complexity of binary search?<br>
+                <input type="radio" name="q1" value="0"> O(1)<br>
+                <input type="radio" name="q1" value="1"> O(log n)<br>
+                <input type="radio" name="q1" value="2"> O(n)<br>
+                <input type="radio" name="q1" value="3"> O(n^2)</li>
+              <li>Which algorithm is used for finding the shortest path in a graph?<br>
+                <input type="radio" name="q2" value="0"> Dijkstra's<br>
+                <input type="radio" name="q2" value="1"> Kruskal's<br>
+                <input type="radio" name="q2" value="2"> Prim's<br>
+                <input type="radio" name="q2" value="3"> Floyd-Warshall</li>
+              <li>What does DFS stand for?<br>
+                <input type="radio" name="q3" value="0"> Depth First Search<br>
+                <input type="radio" name="q3" value="1"> Direct File System<br>
+                <input type="radio" name="q3" value="2"> Data Flow Structure<br>
+                <input type="radio" name="q3" value="3"> Dynamic Function Set</li>
+              <li>Which sorting algorithm has the best average case?<br>
+                <input type="radio" name="q4" value="0"> Bubble Sort<br>
+                <input type="radio" name="q4" value="1"> Quick Sort<br>
+                <input type="radio" name="q4" value="2"> Insertion Sort<br>
+                <input type="radio" name="q4" value="3"> Selection Sort</li>
+              <li>What is a greedy algorithm?<br>
+                <input type="radio" name="q5" value="0"> Always optimal<br>
+                <input type="radio" name="q5" value="1"> Makes locally optimal choices<br>
+                <input type="radio" name="q5" value="2"> Uses backtracking<br>
+                <input type="radio" name="q5" value="3"> For dynamic programming</li>
+              <li>Which algorithm is used for topological sorting?<br>
+                <input type="radio" name="q6" value="0"> Kahn's algorithm<br>
+                <input type="radio" name="q6" value="1"> Bellman-Ford<br>
+                <input type="radio" name="q6" value="2"> Floyd-Warshall<br>
+                <input type="radio" name="q6" value="3"> Kruskal's</li>
+              <li>What is the purpose of the Knuth-Morris-Pratt algorithm?<br>
+                <input type="radio" name="q7" value="0"> Sorting<br>
+                <input type="radio" name="q7" value="1"> String matching<br>
+                <input type="radio" name="q7" value="2"> Graph traversal<br>
+                <input type="radio" name="q7" value="3"> Number theory</li>
+              <li>Which algorithm paradigm uses memoization?<br>
+                <input type="radio" name="q8" value="0"> Greedy<br>
+                <input type="radio" name="q8" value="1"> Divide and Conquer<br>
+                <input type="radio" name="q8" value="2"> Dynamic Programming<br>
+                <input type="radio" name="q8" value="3"> Backtracking</li>
+              <li>What is the time complexity of the naive string matching algorithm?<br>
+                <input type="radio" name="q9" value="0"> O(n)<br>
+                <input type="radio" name="q9" value="1"> O(m*n)<br>
+                <input type="radio" name="q9" value="2"> O(log n)<br>
+                <input type="radio" name="q9" value="3"> O(n log n)</li>
+              <li>Which algorithm is used for finding minimum spanning tree?<br>
+                <input type="radio" name="q10" value="0"> Dijkstra's<br>
+                <input type="radio" name="q10" value="1"> Kruskal's<br>
+                <input type="radio" name="q10" value="2"> Bellman-Ford<br>
+                <input type="radio" name="q10" value="3"> Floyd-Warshall</li>
+            </ol>
+            <button type="button" class="btn btn-primary" onclick="submitQuiz('algorithms')">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="database-management">
+        <div class="container">
+          <h2 class="section-title">Database Management Mock Test</h2>
+          <form id="database-management-quiz">
+            <ol>
+              <li>What does SQL stand for?<br>
+                <input type="radio" name="q1" value="0"> Structured Query Language<br>
+                <input type="radio" name="q1" value="1"> Simple Query Language<br>
+                <input type="radio" name="q1" value="2"> Standard Query Language<br>
+                <input type="radio" name="q1" value="3"> Sequential Query Language</li>
+              <li>Which is a NoSQL database?<br>
+                <input type="radio" name="q2" value="0"> MySQL<br>
+                <input type="radio" name="q2" value="1"> MongoDB<br>
+                <input type="radio" name="q2" value="2"> PostgreSQL<br>
+                <input type="radio" name="q2" value="3"> Oracle</li>
+              <li>What is normalization in databases?<br>
+                <input type="radio" name="q3" value="0"> Reducing redundancy<br>
+                <input type="radio" name="q3" value="1"> Increasing redundancy<br>
+                <input type="radio" name="q3" value="2"> Adding indexes<br>
+                <input type="radio" name="q3" value="3"> Creating views</li>
+              <li>Which key uniquely identifies a record?<br>
+                <input type="radio" name="q4" value="0"> Foreign Key<br>
+                <input type="radio" name="q4" value="1"> Primary Key<br>
+                <input type="radio" name="q4" value="2"> Composite Key<br>
+                <input type="radio" name="q4" value="3"> Candidate Key</li>
+              <li>What is ACID in databases?<br>
+                <input type="radio" name="q5" value="0"> Atomicity, Consistency, Isolation, Durability<br>
+                <input type="radio" name="q5" value="1"> Accuracy, Completeness, Integrity, Durability<br>
+                <input type="radio" name="q5" value="2"> Atomicity, Completeness, Isolation, Durability<br>
+                <input type="radio" name="q5" value="3"> Accuracy, Consistency, Integrity, Durability</li>
+              <li>Which SQL command is used to retrieve data?<br>
+                <input type="radio" name="q6" value="0"> INSERT<br>
+                <input type="radio" name="q6" value="1"> UPDATE<br>
+                <input type="radio" name="q6" value="2"> SELECT<br>
+                <input type="radio" name="q6" value="3"> DELETE</li>
+              <li>What is a JOIN in SQL?<br>
+                <input type="radio" name="q7" value="0"> Combining tables<br>
+                <input type="radio" name="q7" value="1"> Sorting data<br>
+                <input type="radio" name="q7" value="2"> Filtering data<br>
+                <input type="radio" name="q7" value="3"> Grouping data</li>
+              <li>Which is a database management system?<br>
+                <input type="radio" name="q8" value="0"> HTML<br>
+                <input type="radio" name="q8" value="1"> CSS<br>
+                <input type="radio" name="q8" value="2"> MySQL<br>
+                <input type="radio" name="q8" value="3"> JavaScript</li>
+              <li>What is indexing in databases?<br>
+                <input type="radio" name="q9" value="0"> Slowing down queries<br>
+                <input type="radio" name="q9" value="1"> Speeding up queries<br>
+                <input type="radio" name="q9" value="2"> Storing data<br>
+                <input type="radio" name="q9" value="3"> Deleting data</li>
+              <li>Which normal form eliminates transitive dependencies?<br>
+                <input type="radio" name="q10" value="0"> 1NF<br>
+                <input type="radio" name="q10" value="1"> 2NF<br>
+                <input type="radio" name="q10" value="2"> 3NF<br>
+                <input type="radio" name="q10" value="3"> BCNF</li>
+            </ol>
+            <button type="button" class="btn btn-primary" onclick="submitQuiz('database-management')">Submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div class="copyright">© 2025 Vector University. All rights reserved.</div>
+        <div class="madeby">Made with ❤️ by VISHAL_GUPTA</div>
+        <div class="muted">Exams • Training • Mock Tests</div>
+      </div>
+    </footer>
+  </body>
+</html>

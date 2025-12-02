@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="logovector.jpg" type="image/svg+xml" />
+    <title>Vector University • E‑Certificates</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./particles.js"></script>
+  </head>
+  <body class="certificates-page">
+    <div class="gradient-background">
+      <div class="sphere-1 gradient-sphere"></div>
+      <div class="sphere-2 gradient-sphere"></div>
+      <div class="sphere-3 gradient-sphere"></div>
+    </div>
+    <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+    <div class="glow"></div>
+    <div class="particles-container" id="particles-container"></div>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <img src="logovector.jpg" alt="Vector University logo" class="brand-logo" />
+          <span>Vector University</span>
+        </div>
+        <nav class="nav-links">
+          <a href="./index.html">Home</a>
+          <a class="active" href="./certificates.html">Certificates</a>
+          <a href="./about.html">About Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>E‑Certificates</h1>
+          <p>Download your course completion certificates once you pass the online examination.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 class="section-title">Available Certificates</h2>
+          <div class="grid grid-3" style="margin-top: 1rem;">
+            <article class="card">
+              <h3>Data Structures Certificate</h3>
+              <p>Issued for completing the Data Structures course and examination.</p>
+              <div class="actions">
+                <a class="btn btn-success" href="#" download>Download</a>
+                <button class="btn btn-outline" onclick="verifyCertificate('Data Structures')">Verify</button>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Web Development Certificate</h3>
+              <p>Issued for completing the Web Development course and examination.</p>
+              <div class="actions">
+                <a class="btn btn-success" href="#" download>Download</a>
+                <button class="btn btn-outline">Verify</button>
+              </div>
+            </article>
+            <article class="card">
+              <h3>AI Fundamentals Certificate</h3>
+              <p>Issued for completing the AI Fundamentals course and examination.</p>
+              <div class="actions">
+                <a class="btn btn-success" href="#" download>Download</a>
+                <button class="btn btn-outline" onclick="verifyCertificate('AI Fundamentals')">Verify</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 class="section-title">Certificate Guidelines</h2>
+          <ul class="list" style="margin-top: 0.75rem;">
+            <li class="list-item"><span class="badge badge-primary">Eligibility</span> Pass score ≥ 60%.</li>
+            <li class="list-item"><span class="badge badge-primary">Verification</span> Use the verify button to check authenticity.</li>
+            <li class="list-item"><span class="badge badge-primary">Reprints</span> Unlimited digital downloads after completion.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div class="copyright">© 2025 Vector University. All rights reserved.</div>
+        <div class="madeby">Made with ❤️ by VISHAL_GUPTA</div>
+        <div class="muted">E‑Certificates • Verification • Support</div>
+      </div>
+    </footer>
+  </body>
+</html>
+<script>
+function verifyCertificate(course) {
+  alert(`Certificate for ${course} is authentic and verified by Vector University.`);
+}
+</script>
